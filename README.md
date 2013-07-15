@@ -7,8 +7,8 @@ Based on an old idea from OpenLayers, this plugin let's you ask Leaflet to load
 additional tiles beyond the bounds of the current viewport by specifiying a 
 `buffer` config property on a L.tileLayer
 
-see: http://dev.openlayers.org/releases/OpenLayers-2.11/examples/buffer.html
-see: http://dev.openlayers.org/releases/OpenLayers-2.12/doc/apidocs/files/OpenLayers/Layer/Grid-js.html#OpenLayers.Layer.Grid.buffer
+- see: http://dev.openlayers.org/releases/OpenLayers-2.11/examples/buffer.html
+- see: http://dev.openlayers.org/releases/OpenLayers-2.12/doc/apidocs/files/OpenLayers/Layer/Grid-js.html#OpenLayers.Layer.Grid.buffer
 
 ## Usage
 
