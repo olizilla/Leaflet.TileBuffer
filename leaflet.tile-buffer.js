@@ -9,16 +9,16 @@
 
   Leaflet.tile-buffer, a plugin to encourage Leaflet to load tiles beyond the viewport.
 
-  Based on an old idea from OpenLayers, this plugin let's you ask Leaflet to load
-  additional tiles beyond the bounds of the current viewport by specifiying a 
-  `buffer` config property on a L.tileLayer
+  Based on an old OpenLayers feature, TileBuffer let's you ask Leaflet to put aside 
+  it's performance concerns and load additional tiles beyond the bounds of the 
+  current viewport, for the sake of aesthetics.
 
   see: http://dev.openlayers.org/releases/OpenLayers-2.11/examples/buffer.html
   see: http://dev.openlayers.org/releases/OpenLayers-2.12/doc/apidocs/files/OpenLayers/Layer/Grid-js.html#OpenLayers.Layer.Grid.buffer
 
   ## Usage
 
-  - Add leaflet.tile-buffer.js to your page.
+  - Add `leaflet.tile-buffer.js` to your page.
   - Add a `buffer` property to your layer definitions. It expects a Number. 8 is a good one.
 
 	```javascript
@@ -31,9 +31,10 @@
 	)
 	```
 
-  - I've found you need a buffer of about 4 per zoom level, if you want a nice zoom out on 1280x1024
-  - Fine tune it as required. The optimal value depends on the viewport size, so experiment. 
-  - Or be lazy and set it really high, just don't complain when your mobile performance sucks.
+  I've found a buffer of about 4 per zoom level works if you want a nice zoom out on 1280x1024. 
+  Fine tune it as required. The optimal value depends on the viewport size, so experiment... 
+  or be lazy and set it really high. This will harm your mobile / low bandwidth performance, 
+  but if that's not an issue for your project, go nuts.
 
   ## Why?
 
@@ -105,8 +106,6 @@ L.TileLayer.include({
 			}
 			
 			var buffer = layer.options.buffer;
-
-			console.log('buffering', buffer);
 
 			bounds.max.x += buffer;
 			bounds.max.y += buffer;
