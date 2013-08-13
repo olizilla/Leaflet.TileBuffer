@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name='viewport' content='width=device-width, initial-scale=1.0' />
+	<style>
+		body{
+			font-family: futura, sans-serif;
+			color: #333;
+			background: #eee;
+			text-align: center;
+		}
+		.example{
+			display: inline-block;
+			width: 40%;
+		}
+		iframe{
+			border:4px solid gold;
+			background: dodgerblue;
+			width: 100%;
+			height:400px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Leaflet TileBuffer Plugin</h1>
+	<div class="example">
+		<iframe src="without-buffer.html"></iframe>
+		<p>Without TileBuffer plugin</p>
+	</div>
+	<div class="example">
+		<iframe src="with-buffer.html"></iframe>
+		<p>With TileBuffer plugin</p>
+	</div>
+
+	<footer>
+		by <a href="https://twitter.com/olizilla">@olizilla</a>
+	</footer>
+</body>
+</html>

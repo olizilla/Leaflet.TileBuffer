@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
+	<!--[if lte IE 8]><link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.ie.css" /><![endif]-->
+	<style>
+		html,body,#leaflet{
+			background: gold;
+			width:100%; height:100%;
+			padding:0;
+			margin:0;
+		}
+		.leaflet-zoom-anim .leaflet-zoom-animated {
+			-webkit-transition: -webkit-transform 2s; 
+			   -moz-transition:    -moz-transform 2s; 
+			     -o-transition:      -o-transform 2s; 
+			        transition:         transform 2s;
+		}
+	</style>
+</head>
+<body>
+	<div id="leaflet"></div>
+
+	<script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
+	<script src="leaflet.tile-buffer.js"></script>
+	<script>
+		var layer = L.tileLayer("http://{s}tile.stamen.com/watercolor/{z}/{x}/{y}.png", {
+			subdomains: ["a.", "b.", "c.", "d."],
+			buffer: 4
+		});
+
+		var map = new L.Map("leaflet", {
+	    	center: new L.LatLng(50, 0),
+	    	zoom: 4,
+	    	minZoom:2,
+	    	zoomControl:false,
+	    	attributionControl:false
+		});
+		
+		map.addLayer(layer);
+
+		setInterval(function(){
+			var newzoom = map.getZoom() === 4 ? 2 : 4
+			map.setZoom(newzoom, {animate: true});
+			console.log(newzoom)
+		}, 4000)
+
+
+	</script>
+</body>
+</html>
